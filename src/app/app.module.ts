@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { PostsComponent } from './posts/posts.component';
-import { PostFormComponent } from './posts/post-form/post-form.component';
+import { CreatePostFormComponent } from './posts/create-post-form/create-post-form.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
   { path: 'auth/signin', component: SigninComponent },
   { path: 'posts', canActivate: [AuthGuardService], component: PostsComponent },
-  { path: 'new', canActivate: [AuthGuardService], component: PostFormComponent },
+  { path: 'new', canActivate: [AuthGuardService], component: CreatePostFormComponent },
   { path: '', redirectTo: 'posts', pathMatch: 'full' },
   { path: '**', redirectTo: 'posts' }
 ];
@@ -29,7 +29,7 @@ const appRoutes: Routes = [
     SignupComponent,
     SigninComponent,
     PostsComponent,
-    PostFormComponent,
+    CreatePostFormComponent,
     HeaderComponent
   ],
   imports: [
@@ -46,4 +46,5 @@ const appRoutes: Routes = [
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
