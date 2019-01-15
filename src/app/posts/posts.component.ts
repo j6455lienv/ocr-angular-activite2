@@ -27,7 +27,7 @@ export class PostsComponent implements OnInit, OnDestroy {
   }
 
   onNewPost() {
-    this.router.navigate(['/post', 'new']);
+    this.router.navigate(['/new']);
   }
 
   onDeletePost(post: Post) {
