@@ -12,7 +12,6 @@ import { PostsComponent } from './posts/posts.component';
 import { CreatePostFormComponent } from './posts/create-post-form/create-post-form.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
@@ -36,7 +35,6 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
