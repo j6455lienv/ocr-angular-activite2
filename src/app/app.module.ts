@@ -17,8 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
   { path: 'auth/signin', component: SigninComponent },
-  { path: 'posts', canActivate: [AuthGuardService], component: PostsComponent },
-  { path: 'posts/new', canActivate: [AuthGuardService], component: PostFormComponent },
+  { path: 'blog', canActivate: [AuthGuardService], component: PostsComponent },
+  { path: 'post/new', canActivate: [AuthGuardService], component: PostFormComponent },
 
 ];
 @NgModule({
