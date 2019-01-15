@@ -11,6 +11,7 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class PostFormComponent implements OnInit {
 
+  created_date = new Date();
   postForm: FormGroup;
 
   constructor(
@@ -33,7 +34,7 @@ export class PostFormComponent implements OnInit {
   onSavePost() {
     const title = this.postForm.get('title').value;
     const content = this.postForm.get('content').value;
-    const newPost = new Post(title, content, 0, new Date());
+    const newPost = new Post(title, content, 0, this.created_date.toString());
 
     this.postService.createNewPost(newPost);
     this.router.navigate(['/blog']);

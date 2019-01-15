@@ -3,6 +3,6 @@ export class Post {
     public title: string,
     public content: string,
     public likes: number,
-    public created_date: Date
+    public created_date: string
     ) {}
 }

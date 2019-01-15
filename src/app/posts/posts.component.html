@@ -1,18 +1,21 @@
-<li class="post" *ngFor="let post of posts; let i = index" [ngClass]="{'list-group-item': true,
-  'list-group-item-success': post.likes > 0,
-  'list-group-item-danger': post.likes < 0}">
+<li class="post" *ngFor="let post of posts; let i = index" [ngClass]="{
+      'list-group-item': true,
+      'list-group-item-success': post.likes > 0,
+      'list-group-item-danger': post.likes < 0}">
 
-    <div>
-      <h4 class="title">{{ post.title }}</h4>
-      <p class="created-date">{{ post.created_date | date: 'short' | lowercase }}</p>
-    </div>
+  <div>
+    <h4 class="title">{{ post.title }}</h4>
+    <p class="created-date pull-right">{{ post.created_date | date: 'short' | lowercase }}</p>
+  </div>
 
-    <p>{{ post.content }}</p>
-    <p>Likes : {{ post.likes }}</p>
+  <p>{{ post.content }}</p>
+  <p>Likes : {{ post.likes }}</p>
 
+  <div>
     <button class="like-button btn btn-primary" (click)="onLike(i)">
       <i class="fa fa-thumbs-up fa-1x" aria-hidden="true"> </i>
     </button>
+
     <button class="btn btn-primary" (click)="onDislike(i)">
       <i class="fa fa-thumbs-down fa-1x" aria-hidden="true"> </i>
     </button>
@@ -20,5 +23,6 @@
     <button class="btn btn-danger pull-right" (click)="onDeletePost(post)">
       <i class="fa fa-trash-alt fa-1x" aria-hidden="true"> </i>
     </button>
+  </div>
 
 </li>
